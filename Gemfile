@@ -14,9 +14,8 @@ gem "less-rails-bootstrap"
 gem "minitest-rails"
 gem "figaro"
 gem "faraday"
-
+gem "active_model_serializers"
 gem "sqlite3"
-# gem "pg"
 
 group :development do
   gem 'web-console', '~> 2.0'
