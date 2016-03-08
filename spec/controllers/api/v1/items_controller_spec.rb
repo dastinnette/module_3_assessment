@@ -22,22 +22,20 @@ RSpec.describe Api::V1::ItemsController, type: :controller do
 
       expect(item1['name']).to        eq items(:item1).name
       expect(item1['description']).to eq items(:item1).description
-      expect(item2['name']).to        eq items(:item2).name
-      expect(item2['description']).to eq items(:item2).description
     end
   end
 
-  xdescribe "#show" do
-    it "returns a successful 200 response" do
-      get :show, format: :json
+  describe "#show" do
+    it "returns a successful 200 response and a single customer" do
+      get :show, format: :json, id: items(:item1).id
 
-      expect(response).to be_success
-    end
+      expect(response.status).to eq(200)
+      expect(response.content_type).to eq "application/json"
 
-    it "returns a single student" do
-      get :show, format: :json
+      body = JSON.parse(response.body)
 
-
+      expect(body['name']).to        eq items(:item1).name
+      expect(body['description']).to eq items(:item1).description
     end
   end
 
