@@ -17,10 +17,14 @@ class BestbuyService
     response.body
   end
 
+  def search
+    parse(connection.get(""))
+  end
 
-  # private
-  #
-  # def parse(response)
-  #   JSON.parse(response.body, symbolize_name: true)
-  # end
+
+  private
+
+  def parse(response)
+    JSON.parse(response.body, symbolize_name: true)
+  end
 end

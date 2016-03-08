@@ -12,7 +12,7 @@ RSpec.describe "Bestbuy API", type: :request do
       results      = service.search
       first_result = results.first
 
-      expect(first_result[:sku]).to eq(4763330)
+      expect(first_result["sku"]).to eq(4763330)
       expect(service.search.count).to eq(15)
     end
   end
