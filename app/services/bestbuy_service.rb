@@ -10,7 +10,12 @@ class BestbuyService
     @key = ENV['best_buy']
   end
 
-  def search
+  def search_broad
+    parse(connection.get("/search=sennheiser)?format=json&show=sku,name,customerReviewAverage,shortDescription,salePrice,image&pageSize=15&apiKey=#{key}"))
+    binding.pry
+  end
+
+  def search_specific
     parse(connection.get("/search=#{searchterm})?format=json&show=sku,name,customerReviewAverage,shortDescription,salePrice,image&pageSize=15&apiKey=#{key}"))
   end
 

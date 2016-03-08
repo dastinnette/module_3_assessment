@@ -9,7 +9,7 @@ RSpec.describe "Bestbuy API", type: :request do
 
   it "returns a list of searched for items" do
     VCR.use_cassette("broad_search") do
-      results      = service.search
+      results      = service.search_broad
       first_result = results.first
 
       expect(first_result["sku"]).to eq(4763330)
