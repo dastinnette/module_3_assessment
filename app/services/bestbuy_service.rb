@@ -2,7 +2,7 @@ class BestbuyService
   attr_reader :connection, :key
 
   def initialize
-    @connection = Faraday.new(url: "https://api.bestbuy.com")
+    @connection = Faraday.new(url: "https://api.bestbuy.com/v1/products")
     @key        = ENV["best_buy"]
   end
 
