@@ -16,6 +16,7 @@ gem "figaro"
 gem "faraday"
 gem "active_model_serializers"
 gem "sqlite3"
+gem 'factory_girl_rails'
 
 group :development do
   gem 'web-console', '~> 2.0'
