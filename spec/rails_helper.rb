@@ -9,7 +9,6 @@ require 'vcr'
   def create_items
     Item.create(name: "Beer", description: "Good", image_url: "asdf")
     Item.create(name: "Pizza", description: "Better", image_url: "1234")
-    Item.create(name: "Chocolate", description: "Best", image_url: "4321")
   end
 
 ActiveRecord::Migration.maintain_test_schema!

@@ -14,7 +14,7 @@ gem "less-rails-bootstrap"
 gem "minitest-rails"
 gem "figaro"
 gem "faraday"
-gem "active_model_serializers"
+gem "active_model_serializers", github: "rails-api/active_model_serializers"
 gem "sqlite3"
 
 group :development do

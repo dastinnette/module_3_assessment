@@ -1,0 +1,15 @@
+item1:
+  id: 1
+  name: "Pizza"
+  description: "Good"
+  image_url: "asdf"
+  created_at: "2012-03-27 14:54:09"
+  updated_at: "2012-03-27 14:54:09"
+
+item2:
+  id: 2
+  name: "Beer"
+  description: "Better"
+  image_url: "1234"
+  created_at: "2012-03-28 14:54:09"
+  updated_at: "2012-03-28 14:54:09"
