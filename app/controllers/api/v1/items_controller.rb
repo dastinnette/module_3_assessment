@@ -6,7 +6,17 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def show
+    respond_with Item.find(params[:id])
+  end
 
+  private
+
+  def item_params
+    params.permit(:id,
+                  :name,
+                  :description,
+                  :created_at,
+                  :updated_at)
   end
 
 end
