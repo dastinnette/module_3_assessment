@@ -39,4 +39,14 @@ RSpec.describe Api::V1::ItemsController, type: :controller do
     end
   end
 
+  describe "#delete" do
+    it "returns a 204 response record deleted" do
+      delete :destroy, format: :json, id: 1
+
+      expect(response.status).to eq(204)
+      expect(response.content_type).to eq "application/json"
+      expect(Item.where(id: 1)).to be_empty
+    end
+  end
+
 end
