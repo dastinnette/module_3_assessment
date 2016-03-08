@@ -1,5 +1,5 @@
 class BestbuyService
-  attr_reader :connection
+  attr_reader :connection, :key
 
   def initialize
     @connection = Faraday.new(:url => "https://api.bestbuy.com/v1/products") do |faraday|
@@ -7,20 +7,12 @@ class BestbuyService
       faraday.response :logger
       faraday.adapter  Faraday.default_adapter
     end
+    @key = ENV['best_buy']
   end
 
   def search
-    response = connection.get do |req|        # GET http://sushi.com/search?page=2&limit=100
-      req.url '/search', :page => 2
-      req.params['limit'] = 15
-    end
-    response.body
+    parse(connection.get("/search=#{searchterm})?format=json&show=sku,name,customerReviewAverage,shortDescription,salePrice,image&apiKey=#{key}"))
   end
-
-  def search
-    parse(connection.get(""))
-  end
-
 
   private
 
