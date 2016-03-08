@@ -11,7 +11,7 @@ class BestbuyService
   end
 
   def search
-    parse(connection.get("/search=#{searchterm})?format=json&show=sku,name,customerReviewAverage,shortDescription,salePrice,image&apiKey=#{key}"))
+    parse(connection.get("/search=#{searchterm})?format=json&show=sku,name,customerReviewAverage,shortDescription,salePrice,image&pageSize=15&apiKey=#{key}"))
   end
 
   private
